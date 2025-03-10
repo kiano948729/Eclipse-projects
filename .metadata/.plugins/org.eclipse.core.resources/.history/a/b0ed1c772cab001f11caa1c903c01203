@@ -1,0 +1,50 @@
+package mastermind;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class ArrayOpdracht
+{
+
+    public static void main(String[] args)
+    {
+	Scanner console = new Scanner(System.in);
+//	int[] klas = { 0, 0, 0, 0, 0 };
+//	int toets = 1;
+//	for (int i = 0; i < klas.length; i++)
+//	{
+//	    System.out.println("voer toets " + toets + " in");
+//	    System.out.println("score 0-100");
+//	    toets++;
+//	    klas[i] = console.nextInt();
+//	}
+//	int gemiddelde = 0;
+//	gemiddelde = gemiddelde / klas.length;;
+//	System.out.println(gemiddelde);
+//	ArrayList<String> students = new ArrayList<>();
+//	
+//	students.add("amy");
+//	students.add("bob");
+//	students.add("cindy");
+//	students.add("david");
+//	System.out.println(students.size());
+//	System.out.println(students);
+//	students.add(0, "nick");
+//	students.add(1, "mike");
+//	students.remove(3);
+//	System.out.println(students.size());
+//	System.out.println(students);
+//	for(int idx = 0; idx < students.size(); idx++) {
+//	    System.out.println(students.get(idx));
+//	}
+	ArrayList<Integer> num = new ArrayList<>();
+	num.add(1);
+	num.add(2);
+	num.add(9);
+	num.add(22);
+	for(int i = 0; i < num.size(); i++) {
+	    System.out.println(num.get(i));
+	}
+
+    }
+}

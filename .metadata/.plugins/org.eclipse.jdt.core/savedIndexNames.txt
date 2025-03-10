@@ -1,0 +1,13 @@
+INDEX VERSION 1.134+C:\Users\kiano\OneDrive - ROC Nijmegen\workspace2024\.metadata\.plugins\org.eclipse.jdt.core
+3319556205.index
+3080339929.index
+712673515.index
+2440097375.index
+839625450.index
+1865797976.index
+1988665504.index
+1238286119.index
+3842455314.index
+1634819534.index
+291338025.index
+2061656212.index

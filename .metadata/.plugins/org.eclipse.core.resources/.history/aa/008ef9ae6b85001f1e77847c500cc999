@@ -1,0 +1,72 @@
+package mastermind;
+
+import java.util.Scanner;
+
+public class MastermindGame
+{
+    public static void main(String[] args)
+    {
+	Scanner console = new Scanner(System.in);
+	MasterMindFunctions game = new MasterMindFunctions();
+	String beurt = "beurten";
+	while (!game.isGameOver || game.turnCount < 10)
+	{
+//	    voordat je begint ik heb de secretCode laten uitschrijven om het makkelijker te maken,
+//	    verandeer de regel 39 in masterMindFunctions naar een comment om het spel in werkelijkheid te spelen
+	    System.out.println("Welkom bij het spel Mastermind!");
+	    System.out.println("1. Wil je beginnen?");
+	    System.out.println("2. Wil je stoppen?");
+	    String keuze = console.nextLine();
+
+	    switch (keuze)
+	    {
+	    case "1":
+		game.generateCode();
+		while (!game.isGameOver && game.turnCount < 10)
+		{
+		    game.turnCount++;
+		    String[] guessCode = game.getUserInput();
+
+		    if (game.checkWin(guessCode))
+		    {
+			if (game.turnCount == 1)
+			{
+			    beurt = "beurt";
+			}
+			System.out.println("Je hebt de code in " + game.turnCount + " " + beurt + "geraden!");
+
+			System.out.println("De geheime code was: " + String.join(" ", game.secretCode));
+		    } else
+		    {
+			game.FirstFeedback(guessCode);
+			game.SecondFeedback(guessCode);
+
+			if (game.turnCount < 10)
+			{
+			    System.out.println("Je hebt het nog niet goed, je hebt nog " + (10 - game.turnCount)
+				    + " beurten over.");
+			} else
+			{
+			    System.out.println("Game over! De geheime code was: " + String.join(" ", game.secretCode));
+			}
+		    }
+		    System.out.println("Wil je nog een berekening doen? (ja/nee)");
+		    String verder = console.nextLine();
+
+		    if (verder.equals("nee"))
+		    {
+			game.isGameOver = true;
+		    }
+		}
+		break;
+	    case "2":
+		System.out.println("Doei!");
+		return;
+	    default:
+		System.out.println("Ongeldige keuze.");
+		break;
+	    }
+
+	}
+    }
+}

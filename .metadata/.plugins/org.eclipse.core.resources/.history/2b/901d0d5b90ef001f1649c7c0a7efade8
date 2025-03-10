@@ -1,0 +1,20 @@
+package oop1;
+import java.util.Scanner;
+public class SnoepAutomaat
+{
+    public static void main(String[] args)
+    {
+	// TODO Auto-generated method stub
+	Scanner console = new Scanner(System.in);
+	System.out.println("welkom bij het snoepautomaat");
+	System.out.println("type ja");
+	String keuze = console.nextLine();
+        Snoep snoepautomaat = new Snoep();
+        if (keuze.equalsIgnoreCase("ja")) {
+            System.out.println("Je krijgt het snoepje: " + String.join(" ", snoepautomaat.getSnoep()));
+        } else {
+            System.out.println("Misschien een andere keer!");
+        }
+    }
+}
+

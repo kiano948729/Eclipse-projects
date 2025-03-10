@@ -1,0 +1,20 @@
+package oop1;
+import java.util.Scanner;
+
+public class Prisoner 
+{
+    public String name;
+    public double height;
+    public int sentence;
+    
+    public Prisoner(String name) {
+	this.name = name; 
+    }
+    public void setNaam(String naam) {
+        this.name = name;
+    }
+    public String getNaam() {
+	return name;
+    }
+    
+}

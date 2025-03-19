@@ -70,6 +70,7 @@ public class Ovchipkaart
 			System.out.println("oke tot dan : " + toLocatie);
 			gevonden = true;
 		    }
+		    
 
 		}
 		if (!gevonden)

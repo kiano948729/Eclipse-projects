@@ -15,11 +15,11 @@ public class Ovpoortje
     }
     public void OpenOvpoort(){
 	isOpen =true;
-	System.out.println("het poortje is open");
+	System.out.println("het poortje " + poortjeNummer + " is open");
     }
     public void closeOvpoort() {
 	isOpen =false;
-	System.out.println("het poortje is gesloten");
+	System.out.println("het poortje " + poortjeNummer + " is gesloten");
     }
     public boolean checkKaart(Kaart kaart)
     {

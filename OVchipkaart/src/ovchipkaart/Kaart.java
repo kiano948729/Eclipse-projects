@@ -1,35 +1,69 @@
 package ovchipkaart;
 
-public class Kaart 
+public class Kaart
 {
     public String naam;
     public int kaartnummer;
     public double saldo;
     public boolean isGeldig;
-    public Kaart(String naam, int kaartnummer, double saldo) {
-	this.naam = naam; 
-	this.kaartnummer = kaartnummer;
+
+    public Kaart(String naam, double saldo)
+    {
+	this.naam = naam;
+	this.kaartnummer = setKaartnummer();
 	this.saldo = saldo;
-	this.isGeldig = false;
+	this.isGeldig = true;
     }
-    public String getNaam() {
+
+    public String getNaam()
+    {
 	return naam;
     }
-    public int getKaartnummer() {
+
+    public int getKaartnummer()
+    {
 	return kaartnummer;
     }
-    public double getSaldo() {
+
+    public double getSaldo()
+    {
 	return saldo;
     }
+
     public void voegSaldoToe(double bedrag) {
-	this.saldo =+bedrag;
+        if (bedrag > 0) {  
+            this.saldo += bedrag;
+            System.out.println("Saldo verhoogd met €" + bedrag);
+            System.out.println("Huidige saldo: €" + saldo);
+        } else {
+            System.out.println("Fout: Bedrag moet positief zijn.");
+        }
     }
+
     public void setGeldigheid(boolean geldig)
     {
 	this.isGeldig = geldig;
     }
+
+    public int setKaartnummer()
+    {
+	for (int i = 0; i < 5; i++)
+	{
+	    kaartnummer = kaartnummer * 10 + (int) (Math.random() * 10);
+	}
+	return kaartnummer;
+
+    }
+
     public boolean checkOvGeldigheid()
     {
 	return isGeldig;
     }
+    public void kaartInfo() {
+	System.out.println("Naam: " + naam );
+	System.out.println("Kaartnummer: " + kaartnummer);
+	System.out.println("Saldo: €" + saldo);
+	System.out.println("Geldigheid: " + isGeldig);
+    }
+
 }

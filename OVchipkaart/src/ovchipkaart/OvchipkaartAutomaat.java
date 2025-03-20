@@ -1,6 +1,4 @@
 package ovchipkaart;
-import java.util.Random;
-import java.util.Arrays;
 
 
 public class OvchipkaartAutomaat

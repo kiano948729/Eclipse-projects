@@ -13,11 +13,11 @@ public class Ovpoortje
     {
 	return poortjeNummer;
     }
-    public void OpenOvpoort(){
+    public void Open(){
 	isOpen =true;
 	System.out.println("het poortje " + poortjeNummer + " is open");
     }
-    public void closeOvpoort() {
+    public void close() {
 	isOpen =false;
 	System.out.println("het poortje " + poortjeNummer + " is gesloten");
     }
@@ -25,7 +25,7 @@ public class Ovpoortje
     {
 	if (kaart.checkOvGeldigheid())
 	{
-	    OpenOvpoort();
+	    Open();
 	    return true;
 	} else
 	{

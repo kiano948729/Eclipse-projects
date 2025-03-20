@@ -1,11 +1,6 @@
 package ovchipkaart;
 
-import java.util.Arrays;
 import java.util.Scanner;
-
-import ovreizen.OvChipkaart;
-import ovreizen.OvMachine;
-import ovreizen.OvPoortje;
 
 public class Ovchipkaart
 {
@@ -16,7 +11,7 @@ public class Ovchipkaart
 	Scanner console = new Scanner(System.in);
 	Ovpoortje poortje1 = new Ovpoortje(1);
 	System.out.println("Welkom bij het Ovchipkaart");
-	OvchipkaartAutomaat machine1 = new OvchipkaartAutomaat(1, null);
+	OvchipkaartAutomaat machine1 = new OvchipkaartAutomaat(1, null);// locatie blijft nog null ivm error, wordt aan gewerkt
 	System.out.println("wat is uw naam?");
 	String naam = console.nextLine();
 	System.out.println("hoeveel saldo zou u willen toevoegen");
@@ -57,7 +52,7 @@ public class Ovchipkaart
 		    System.out.println("Kaart goedgekeurd. Je kunt passeren.");
 		}
 
-		poortje1.closeOvpoort();
+		poortje1.close();
 		System.out.println("Alle locaties: " + String.join(" ", machine1.locaties));
 		System.out.println("waar wilt u uitchecken");
 		String toLocatie = console.nextLine();
@@ -75,7 +70,6 @@ public class Ovchipkaart
 		if (!gevonden)
 		{
 		    System.out.println("Locatie niet gevonden: " + toLocatie);
-		    System.out.println("test");
 		}
 
 		break;
@@ -85,6 +79,7 @@ public class Ovchipkaart
 		break;
 	    }
 	}
+	console.close();
     }
 
 }

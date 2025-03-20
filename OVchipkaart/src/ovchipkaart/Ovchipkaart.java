@@ -24,7 +24,7 @@ public class Ovchipkaart
 	    System.out.println("1. Toon uw kaartinfo / saldo verhogen");
 	    System.out.println("2. wil je inchecken");
 	    System.out.println("3. exit");
-	    console.nextLine();
+	    console.nextLine();// extra nextline ivm fout in Eclipse, houw rekening in terminal!!
 	    String keuze = console.nextLine();
 	    switch (keuze)
 	    {
@@ -41,7 +41,6 @@ public class Ovchipkaart
 		    break;
 		case "2":
 		    mijnKaart.kaartInfo();
-
 		    break;
 		}
 		break;

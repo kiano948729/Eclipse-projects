@@ -70,12 +70,12 @@ public class Ovchipkaart
 			System.out.println("oke tot dan : " + toLocatie);
 			gevonden = true;
 		    }
-		    
 
 		}
 		if (!gevonden)
 		{
 		    System.out.println("Locatie niet gevonden: " + toLocatie);
+		    System.out.println("test");
 		}
 
 		break;

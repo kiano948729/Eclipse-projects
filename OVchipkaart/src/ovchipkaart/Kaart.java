@@ -20,10 +20,6 @@ public class Kaart
 	return naam;
     }
 
-    public int getKaartnummer()
-    {
-	return kaartnummer;
-    }
 
     public double getSaldo()
     {
@@ -40,10 +36,6 @@ public class Kaart
         }
     }
 
-    public void setGeldigheid(boolean geldig)
-    {
-	this.isGeldig = geldig;
-    }
 
     public int setKaartnummer()
     {

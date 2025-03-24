@@ -20,22 +20,23 @@ public class Kaart
 	return naam;
     }
 
-
     public double getSaldo()
     {
 	return saldo;
     }
 
-    public void voegSaldoToe(double bedrag) {
-        if (bedrag > 0) {  
-            this.saldo += bedrag;
-            System.out.println("Saldo verhoogd met €" + bedrag);
-            System.out.println("Huidige saldo: €" + saldo);
-        } else {
-            System.out.println("Fout: Bedrag moet positief zijn.");
-        }
+    public void voegSaldoToe(double bedrag)
+    {
+	if (bedrag > 0)
+	{
+	    this.saldo += bedrag;
+	    System.out.println("Saldo verhoogd met €" + bedrag);
+	    System.out.println("Huidige saldo: €" + saldo);
+	} else
+	{
+	    System.out.println("Fout: Bedrag moet positief zijn.");
+	}
     }
-
 
     public int setKaartnummer()
     {
@@ -51,8 +52,10 @@ public class Kaart
     {
 	return isGeldig;
     }
-    public void kaartInfo() {
-	System.out.println("Naam: " + naam );
+
+    public void kaartInfo()
+    {
+	System.out.println("Naam: " + naam);
 	System.out.println("Kaartnummer: " + kaartnummer);
 	System.out.println("Saldo: €" + saldo);
 	System.out.println("Geldigheid: " + isGeldig);

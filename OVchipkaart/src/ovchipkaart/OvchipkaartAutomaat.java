@@ -1,17 +1,15 @@
 package ovchipkaart;
 
-
 public class OvchipkaartAutomaat
 {
     private int machineID;
     public String locatie;
-    public String[] locaties;
-
+    public String[] bestemming;
 
     public OvchipkaartAutomaat(int machineID, String[] locatie)
     {
 	this.machineID = machineID;
-	this.locaties = new String[]{"test", "rotterdam", "utrecht", "eindhoven", "groningen", "maastricht", "arnhem", "leiden", "zwolle" };
+	this.bestemming = new String[]{ "test", "rotterdam", "utrecht", "eindhoven", "groningen", "maastricht", "arnhem", "leiden", "zwolle" };
     }
 
     // Getters
@@ -46,7 +44,22 @@ public class OvchipkaartAutomaat
 	    System.out.println("Check-uit mislukt. De kaart is ongeldig.");
 	}
     }
-    public String[] getAlleLocaties() {
-        return locaties;
+
+    public String[] getAlleLocaties()
+    {
+	return bestemming;
+    }
+
+    public double tariefBerekenen(String vertrek, String bestemming)
+    {
+	double prijsPerKM = 1.00; 
+	int afstand = afstandInKm(vertrek, bestemming);
+	return afstand * prijsPerKM;    
+	}
+
+    private int afstandInKm(String vertrek, String bestemming)
+    {
+	// TODO Auto-generated method stub
+	return 0;
     }
 }

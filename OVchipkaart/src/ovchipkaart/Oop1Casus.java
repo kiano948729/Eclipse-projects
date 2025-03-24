@@ -2,7 +2,7 @@ package ovchipkaart;
 
 import java.util.Scanner;
 
-public class Oop1Casus 
+public class Oop1Casus
 {
 
     public static void main(String[] args)
@@ -11,7 +11,8 @@ public class Oop1Casus
 	Scanner console = new Scanner(System.in);
 	Ovpoortje poortje1 = new Ovpoortje(1);
 	System.out.println("Welkom bij het Ovchipkaart");
-	OvchipkaartAutomaat machine1 = new OvchipkaartAutomaat(1, null);// locatie blijft nog null ivm error, wordt aan gewerkt
+	OvchipkaartAutomaat machine1 = new OvchipkaartAutomaat(1, null);// locatie blijft nog null ivm error, wordt aan
+									// gewerkt
 	System.out.println("wat is uw naam?");
 	String naam = console.nextLine();
 	System.out.println("hoeveel saldo zou u willen toevoegen");
@@ -45,6 +46,13 @@ public class Oop1Casus
 		}
 		break;
 	    case "2":
+		System.out.println("Alle locaties: " + String.join(" ", machine1.bestemming));
+		System.out.println("Waar begint uw reis?");
+		String vertrek = console.nextLine();
+		System.out.println("Wat is uw bestemming?");
+		String bestemming = console.nextLine();
+		double tarief = machine1.tariefBerekenen(vertrek, bestemming);
+	        System.out.println("Het tarief voor deze reis is: €" + tarief);
 		machine1.checkIn(mijnKaart);
 		if (poortje1.checkKaart(mijnKaart))
 		{
@@ -52,23 +60,20 @@ public class Oop1Casus
 		}
 
 		poortje1.close();
-		System.out.println("Alle locaties: " + String.join(" ", machine1.locaties));
-		System.out.println("waar wilt u uitchecken");
-		String toLocatie = console.nextLine();
 		boolean gevonden = false;
-		for (int i = 0; i < machine1.locaties.length; i++)
+		for (int i = 0; i < machine1.bestemming.length; i++)
 		{
-		    if (toLocatie.trim().equalsIgnoreCase(machine1.locaties[i]))
+		    if (bestemming.trim().equalsIgnoreCase(machine1.bestemming[i]))
 		    {
 			machine1.checkUit(mijnKaart);
-			System.out.println("oke tot dan : " + toLocatie);
+			System.out.println("oke tot dan : " + bestemming);
 			gevonden = true;
 		    }
 
 		}
 		if (!gevonden)
 		{
-		    System.out.println("Locatie niet gevonden: " + toLocatie);
+		    System.out.println("Locatie niet gevonden: " + bestemming);
 		}
 
 		break;

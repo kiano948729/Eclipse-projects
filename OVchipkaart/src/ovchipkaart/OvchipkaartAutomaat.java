@@ -29,7 +29,7 @@ public class OvchipkaartAutomaat
     {
 	if (kaart.checkOvGeldigheid())
 	{
-	    System.out.println("Check-in succesvol op locatie: " + locatie + ". Kaartnummer: " + kaart.getKaartnummer());
+	    System.out.println("Check-in succesvol op locatie: " + locatie + ". Kaartnummer: " + kaart.setKaartnummer());
 	} else
 	{
 	    System.out.println("Check-in mislukt. De kaart is ongeldig.");
@@ -40,7 +40,7 @@ public class OvchipkaartAutomaat
     {
 	if (kaart.checkOvGeldigheid())
 	{
-	    System.out.println("Check-uit succesvol op locatie: " + locatie + ". Kaartnummer: " + kaart.getKaartnummer());
+	    System.out.println("Check-uit succesvol op locatie: " + locatie + ". Kaartnummer: " + kaart.setKaartnummer());
 	} else
 	{
 	    System.out.println("Check-uit mislukt. De kaart is ongeldig.");

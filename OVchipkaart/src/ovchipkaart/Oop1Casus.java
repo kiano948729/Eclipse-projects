@@ -2,7 +2,7 @@ package ovchipkaart;
 
 import java.util.Scanner;
 
-public class Ovchipkaart
+public class Oop1Casus 
 {
 
     public static void main(String[] args)
@@ -24,7 +24,7 @@ public class Ovchipkaart
 	    System.out.println("1. Toon uw kaartinfo / saldo verhogen");
 	    System.out.println("2. wil je inchecken");
 	    System.out.println("3. exit");
-	    console.nextLine();// extra nextline ivm fout in Eclipse, houw rekening in terminal!!
+	    console.nextLine();// extra nextline ivm fout in Eclipse, houd rekening in terminal!!
 	    String keuze = console.nextLine();
 	    switch (keuze)
 	    {

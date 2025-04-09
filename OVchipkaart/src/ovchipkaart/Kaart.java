@@ -1,11 +1,15 @@
 package ovchipkaart;
 
+import java.util.Random;
+
 public class Kaart
 {
+    private static final Random random = new Random();
     public String naam;
     public int kaartnummer;
     public double saldo;
     public boolean isGeldig;
+    
 
     public Kaart(String naam, double saldo)
     {
@@ -38,21 +42,16 @@ public class Kaart
 	}
     }
 
-    public int setKaartnummer()
+    public static int setKaartnummer()
     {
-	for (int i = 0; i < 5; i++)
-	{
-	    kaartnummer = kaartnummer * 10 + (int) (Math.random() * 10);
-	}
-	return kaartnummer;
-
+	return random.nextInt(90000) + 10000;
+	// nog betere optimalisatie!! 
     }
 
     public boolean checkOvGeldigheid()
     {
 	return isGeldig;
     }
-
     public void kaartInfo()
     {
 	System.out.println("Naam: " + naam);
@@ -60,5 +59,4 @@ public class Kaart
 	System.out.println("Saldo: €" + saldo);
 	System.out.println("Geldigheid: " + isGeldig);
     }
-
 }

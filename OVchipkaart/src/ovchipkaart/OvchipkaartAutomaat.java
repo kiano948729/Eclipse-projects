@@ -1,15 +1,28 @@
 package ovchipkaart;
 
+import java.util.HashMap;
+
 public class OvchipkaartAutomaat
 {
     private int machineID;
     public String locatie;
     public String[] bestemming;
+    public int afstand;
+    private HashMap<String, Integer> locaties;
 
-    public OvchipkaartAutomaat(int machineID, String[] locatie)
+    public OvchipkaartAutomaat(int machineID, String string)
     {
 	this.machineID = machineID;
-	this.bestemming = new String[]{ "test", "rotterdam", "utrecht", "eindhoven", "groningen", "maastricht", "arnhem", "leiden", "zwolle" };
+	this.setLocaties(new HashMap<>());
+	this.getLocaties().put("rotterdam", 50);
+	this.getLocaties().put("utrecht", 60);
+	this.getLocaties().put("eindhoven", 30);
+	this.getLocaties().put("groningen", 70);
+	this.getLocaties().put("maastricht", 80);
+	this.getLocaties().put("arnhem", 90);
+	this.getLocaties().put("leiden", 20);
+	this.getLocaties().put("zwolle", 60);
+
     }
 
     // Getters
@@ -27,7 +40,8 @@ public class OvchipkaartAutomaat
     {
 	if (kaart.checkOvGeldigheid())
 	{
-	    System.out.println("Check-in succesvol op locatie: " + locatie + ". Kaartnummer: " + kaart.setKaartnummer());
+	    System.out
+		    .println("Check-in succesvol op locatie: " + locatie + ". Kaartnummer: " + Kaart.setKaartnummer());
 	} else
 	{
 	    System.out.println("Check-in mislukt. De kaart is ongeldig.");
@@ -38,7 +52,8 @@ public class OvchipkaartAutomaat
     {
 	if (kaart.checkOvGeldigheid())
 	{
-	    System.out.println("Check-uit succesvol op locatie: " + locatie + ". Kaartnummer: " + kaart.setKaartnummer());
+	    System.out
+		    .println("Check-uit succesvol op locatie: " + locatie + ". Kaartnummer: " + Kaart.setKaartnummer());
 	} else
 	{
 	    System.out.println("Check-uit mislukt. De kaart is ongeldig.");
@@ -49,17 +64,22 @@ public class OvchipkaartAutomaat
     {
 	return bestemming;
     }
+    
 
-    public double tariefBerekenen(String vertrek, String bestemming)
-    {
-	double prijsPerKM = 1.00; 
-	int afstand = afstandInKm(vertrek, bestemming);
-	return afstand * prijsPerKM;    
+    public double tariefBerekenen(String vertrek, String bestemming) {
+	    afstand = Math.abs(getLocaties().get(vertrek) - getLocaties().get(bestemming));
+	    double prijsPerKm = 0.25;
+	    return afstand * prijsPerKm;
 	}
 
-    private int afstandInKm(String vertrek, String bestemming)
+    public HashMap<String, Integer> getLocaties()
     {
-	// TODO Auto-generated method stub
-	return 0;
+	return locaties;
     }
+
+    public void setLocaties(HashMap<String, Integer> locaties)
+    {
+	this.locaties = locaties;
+    }
+
 }

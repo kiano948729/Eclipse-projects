@@ -11,8 +11,9 @@ public class Oop1Casus
 	Scanner console = new Scanner(System.in);
 	Ovpoortje poortje1 = new Ovpoortje(1);
 	System.out.println("Welkom bij het Ovchipkaart");
-	OvchipkaartAutomaat machine1 = new OvchipkaartAutomaat(1, null);// locatie blijft nog null ivm error, wordt aan
-									// gewerkt
+	OvchipkaartAutomaat machine1 = new OvchipkaartAutomaat(1, "rotterdam");// locatie blijft nog null ivm error,
+									       // wordt aan
+	// gewerkt
 	System.out.println("wat is uw naam?");
 	String naam = console.nextLine();
 	System.out.println("hoeveel saldo zou u willen toevoegen");
@@ -46,13 +47,17 @@ public class Oop1Casus
 		}
 		break;
 	    case "2":
-		System.out.println("Alle locaties: " + String.join(" ", machine1.bestemming));
+
 		System.out.println("Waar begint uw reis?");
 		String vertrek = console.nextLine();
+		for (String i : machine1.getLocaties().keySet())
+		{
+		    System.out.println(i);
+		}
 		System.out.println("Wat is uw bestemming?");
 		String bestemming = console.nextLine();
 		double tarief = machine1.tariefBerekenen(vertrek, bestemming);
-	        System.out.println("Het tarief voor deze reis is: €" + tarief);
+		System.out.println("Het tarief voor deze reis is: €" + tarief);
 		machine1.checkIn(mijnKaart);
 		if (poortje1.checkKaart(mijnKaart))
 		{

@@ -37,6 +37,7 @@ public class Oop1Casus
 		switch (subKeuze)
 		{
 		case "1":
+		    System.out.println("Hoeveel euro toevoegen?");
 		    double newSaldo = console.nextDouble();
 		    console.nextLine();
 		    mijnKaart.voegSaldoToe(newSaldo);
@@ -49,6 +50,10 @@ public class Oop1Casus
 	    case "2":
 
 		System.out.println("Waar begint uw reis?");
+		for (String i : machine1.getLocaties().keySet())
+		{
+		    System.out.println(i);
+		}
 		String vertrek = console.nextLine();
 		for (String i : machine1.getLocaties().keySet())
 		{
@@ -65,21 +70,6 @@ public class Oop1Casus
 		}
 
 		poortje1.close();
-		boolean gevonden = false;
-		for (int i = 0; i < machine1.bestemming.length; i++)
-		{
-		    if (bestemming.trim().equalsIgnoreCase(machine1.bestemming[i]))
-		    {
-			machine1.checkUit(mijnKaart);
-			System.out.println("oke tot dan : " + bestemming);
-			gevonden = true;
-		    }
-
-		}
-		if (!gevonden)
-		{
-		    System.out.println("Locatie niet gevonden: " + bestemming);
-		}
 
 		break;
 	    case "3":

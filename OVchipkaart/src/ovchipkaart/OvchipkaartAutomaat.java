@@ -22,7 +22,7 @@ public class OvchipkaartAutomaat
 	this.getLocaties().put("arnhem", 90);
 	this.getLocaties().put("leiden", 20);
 	this.getLocaties().put("zwolle", 60);
-
+	this.getLocaties().put("nijmegen", 20);
     }
 
     // Getters
@@ -41,7 +41,7 @@ public class OvchipkaartAutomaat
 	if (kaart.checkOvGeldigheid())
 	{
 	    System.out
-		    .println("Check-in succesvol op locatie: " + locatie + ". Kaartnummer: " + Kaart.setKaartnummer());
+		    .println("Check-in succesvol, Kaartnummer: " + Kaart.setKaartnummer());
 	} else
 	{
 	    System.out.println("Check-in mislukt. De kaart is ongeldig.");
@@ -52,8 +52,7 @@ public class OvchipkaartAutomaat
     {
 	if (kaart.checkOvGeldigheid())
 	{
-	    System.out
-		    .println("Check-uit succesvol op locatie: " + locatie + ". Kaartnummer: " + Kaart.setKaartnummer());
+	    System.out.println("Check-uit succesvol, Kaartnummer: "  + Kaart.setKaartnummer());
 	} else
 	{
 	    System.out.println("Check-uit mislukt. De kaart is ongeldig.");
